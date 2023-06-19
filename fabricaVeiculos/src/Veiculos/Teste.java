@@ -7,6 +7,10 @@ public class Teste {
 	public static void main(String[] args) {
 		
 		Carro carrin = new Carro("2002", "vermelho", "DVB-4650", "4");
+		
+		carrin.ligar();
+		carrin.acelerar();
+		carrin.desligar();
 		carrin.acelerar();
 
 		// Moto motinha = new Moto("2022", "Preta", "SKK-0912", "2", "Ninja", "Kawasaki", "600", "Combustível", false);

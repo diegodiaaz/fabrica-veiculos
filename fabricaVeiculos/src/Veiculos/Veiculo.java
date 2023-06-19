@@ -2,7 +2,7 @@ package Veiculos;
 
 public abstract class Veiculo {
 	
-	protected String anoFabricacao, cor, placa, numeroRodas;
+	protected String anoFabricacao, cor, placa, numeroRodas, ignicao;
 
 	public Veiculo(String anoFabricacao, String cor, String placa, String numeroRodas) {
 		this.anoFabricacao = anoFabricacao;
