@@ -67,7 +67,6 @@ public class Carro extends Veiculo{
 			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
 		}
 		
-		
 	}
 
 }
