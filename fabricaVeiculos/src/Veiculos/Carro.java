@@ -3,8 +3,9 @@ package Veiculos;
 import javax.swing.JOptionPane;
 
 public class Carro extends Veiculo{
-	boolean ignicao;
-
+	
+	boolean ignicao, estadoCarro;
+	
 	public Carro(String anoFabricacao, String cor, String placa, String numeroRodas) {
 		super(anoFabricacao, cor, placa, numeroRodas);
 		// TODO Auto-generated constructor stub
@@ -25,12 +26,13 @@ public class Carro extends Veiculo{
 
 	@Override
 	public void desligar() {
-
-		if (ignicao == false) {
-			System.out.println("O carro já está desligado.");
+		
+		if (estadoCarro == false && ignicao == false) {
+			JOptionPane.showMessageDialog(null,"O carro já está desligado.");
 		} else {
+			estadoCarro = false;
 			ignicao = false;
-			System.out.println("Carro desligado.");
+			JOptionPane.showMessageDialog(null,"Carro desligado.");
 		}
 		
 	}
@@ -38,6 +40,7 @@ public class Carro extends Veiculo{
 	@Override
 	public void acelerar() {
 		
+			
 		if (ignicao == true) {
 			int soma = 0, acelerar = 0;
 			int veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Carro ?"));
@@ -66,6 +69,16 @@ public class Carro extends Veiculo{
 		}else {
 			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
 		}
+		
+	}
+
+	@Override
+	public void freiar() {
+
+		if(estadoCarro == true) {
+			
+		}
+		
 		
 	}
 

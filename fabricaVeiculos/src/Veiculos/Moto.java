@@ -1,7 +1,11 @@
 package Veiculos;
 
+import javax.swing.JOptionPane;
+
+
 public class Moto extends Veiculo{
 	
+	boolean ignicao;
 	protected String modelo, marca, cilindrada, tipoAbastecimento;
 	protected boolean bau;
 	
@@ -47,8 +51,40 @@ public class Moto extends Veiculo{
 
 	@Override
 	public void acelerar() {
+		if (ignicao == true) {
+			int soma = 0, acelerar = 0;
+			int veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Carro ?"));
+			
+			while (soma < veloMax) {
+				acelerar = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja acelerar ?"));
+				
+				soma += acelerar;
+				
+				if (soma > veloMax) {
+					JOptionPane.showMessageDialog(null, "Você não pode acelerar " + acelerar
+							+ " kms pois ira ultrapassar a velocidade maxima de seu carro " + veloMax);
+					break;
+				}
+				JOptionPane.showMessageDialog(null, "Seu carro acelerou " + acelerar + " a velocidade é de " + soma);
+				
+				String continua = JOptionPane.showInputDialog(null, "Deseja continuar acelerando ? \n" + "(s/n)");
+				
+				if (continua.equals("s")) {
+					
+				} else if (continua.equals("n")) {
+					break;
+				}
+				
+			}
+		}else {
+			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
+		}
+	
+	}
 
-		
+	@Override
+	public void freiar() {
+		// TODO Auto-generated method stub
 		
 	}
 	
