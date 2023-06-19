@@ -49,6 +49,6 @@ public abstract class Veiculo {
 	
 	public abstract void acelerar();
 	
-	public abstract void freiar();
+	public abstract void frear();
 	
 }
