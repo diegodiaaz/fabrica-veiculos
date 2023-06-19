@@ -47,4 +47,10 @@ public class Caminhao extends Veiculo{
 		
 	}
 
+	@Override
+	public void acelerar() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
