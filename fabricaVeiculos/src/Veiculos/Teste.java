@@ -13,14 +13,15 @@ public class Teste {
 //		motinha.frear();
 //		motinha.abrirBau();
 //		motinha.desligar();
-	motinha.statusMoto();
+//		motinha.statusMoto();
 		
 		Carro carro = new Carro("2023", "Prata", "DDD-1012", "4", "700", "BMW", "BMW 320i", "Flex");
-//		carro.ligar();
-//		carro.acelerar();
-//		carro.abrirPorta();
-//		carro.frear();
-//		carro.desligar();
+		carro.ligar();
+		carro.acelerar();
+		carro.abrirPorta();
+		carro.abrirPortaMala();
+		carro.frear();
+		carro.desligar();
 		carro.statusCarro();
 	
 	Caminhao caminhao = new Caminhao("2021", "Azul", "CSW-0999", "6", true, "15Kg", "10m", "Volvo", "Volvo VM", "Diesel");
@@ -29,11 +30,8 @@ public class Teste {
 //		caminhao.abrirPorta();
 //		caminhao.frear();
 //		caminhao.desligar();
-	caminhao.statusCaminhao();
+//		caminhao.statusCaminhao();
 	
 	}
-	
 
-}
-
-
+} 	
