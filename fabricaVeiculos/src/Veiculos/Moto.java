@@ -4,7 +4,8 @@ package Veiculos;
 
 public class Moto extends Veiculo{
 	
-	boolean ignicao;
+	boolean ignicao, estadoVeiculo;
+	protected int soma, brek, veloMax;
 	protected String modelo, marca, cilindrada, tipoAbastecimento;
 	protected boolean bau;
 	
@@ -25,8 +26,5 @@ public class Moto extends Veiculo{
 		System.out.println("Tipo de abastecimento - " + this.tipoAbastecimento);
 		System.out.println("Baú - " + this.bau);
 	}
-	
-	
-	
 	
 }

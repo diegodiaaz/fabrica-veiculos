@@ -6,13 +6,7 @@ public class Teste {
 
 	public static void main(String[] args) {
 		
-//		Carro carrin = new Carro("2002", "vermelho", "DVB-4650", "4");
-		
-//		carrin.ligar();
-//  	carrin.acelerar();
-//		carrin.frear();
-//		carrin.desligar();
-//		carrin.acelerar();
+
 		
 		
 

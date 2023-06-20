@@ -3,15 +3,17 @@ package Veiculos;
 
 public class Caminhao extends Veiculo{
 
-	boolean ignicao;
+	protected boolean ignicao, estadoVeiculo;
 	protected boolean carga;
 	protected String pesoCarga, tamanhoCarga, marca, modelo, tipoAbastecimento;
+	protected int soma, brek, veloMax;
 	
 	public Caminhao(String anoFabricacao, String cor, String placa, String numeroRodas, String pesoCarga, String tamanhoCarga, String marca, String modelo, String tipoAbastecimento, boolean carga) {
 		super(anoFabricacao, cor, placa, numeroRodas);
-		// TODO Auto-generated constructor stub
+	
 	}
 	
+	//composição de objetos
 	public void statusCaminhao() {
 		System.out.println("Marca - " + this.marca);
 		System.out.println("Modelo - " + this.modelo);
@@ -25,5 +27,4 @@ public class Caminhao extends Veiculo{
 		System.out.println("O caminhão possui carga? - " + this.carga);
 	}
 
-	
-}
+
