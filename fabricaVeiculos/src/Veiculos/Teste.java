@@ -6,13 +6,13 @@ public class Teste {
 
 	public static void main(String[] args) {
 		
-		Carro carrin = new Carro("2002", "vermelho", "DVB-4650", "4");
+		Moto motinha = new Moto("2002", "vermelho", "DVB-4650", "2", "FAN", "HONDA", "160", "Gasolina", false);
 		
-		carrin.ligar();
-		carrin.acelerar();
-		carrin.frear();
-		carrin.desligar();
-		carrin.acelerar();
+		motinha.ligar();
+		motinha.acelerar();
+		motinha.frear();
+		motinha.desligar();
+		//motinha.acelerar();
 		
 		
 

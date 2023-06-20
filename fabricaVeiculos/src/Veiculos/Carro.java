@@ -4,12 +4,11 @@ import javax.swing.JOptionPane;
 
 public class Carro extends Veiculo {
 
-	boolean ignicao, estadoCarro;
+	protected boolean ignicao, estadoVeiculo;
 	protected int soma, brek, veloMax;
 
 	public Carro(String anoFabricacao, String cor, String placa, String numeroRodas) {
 		super(anoFabricacao, cor, placa, numeroRodas);
-		// TODO Auto-generated constructor stub
 	}
 
 	protected String modelo, marca, cavalos, tipoAbastecimento;
@@ -31,7 +30,7 @@ public class Carro extends Veiculo {
 	public void acelerar() {
 
 		if (ignicao == true) {
-			estadoCarro = true;
+			estadoVeiculo = true;
 			int acelerar = 0;
 
 			while (soma < veloMax) {
@@ -63,7 +62,7 @@ public class Carro extends Veiculo {
 
 	@Override
 	public void frear() {
-		if (estadoCarro == true && ignicao == true) {
+		if (estadoVeiculo == true && ignicao == true) {
 			while (soma > 0) {
 				JOptionPane.showMessageDialog(null, "O carro esta a " + soma + " km ");
 
@@ -73,7 +72,7 @@ public class Carro extends Veiculo {
 				
 				if (soma <= 0) {
 					JOptionPane.showMessageDialog(null, "O carro parou");
-					estadoCarro = false;
+					estadoVeiculo = false;
 					break;
 				}
 
@@ -84,20 +83,17 @@ public class Carro extends Veiculo {
 
 				} else if (continua.equals("n")) {
 					break;
-				} else {
-
 				}
-
 			}
 		}
 
 	}
 	@Override
 	public void desligar() {		
-		if (estadoCarro == true) {
+		if (estadoVeiculo == true) {
 			JOptionPane.showMessageDialog(null, "O carro não pode ser desligado em movimento");
 		} else {
-			estadoCarro = false;
+			estadoVeiculo = false;
 			ignicao = false;
 			JOptionPane.showMessageDialog(null, "Carro desligado.");
 		}

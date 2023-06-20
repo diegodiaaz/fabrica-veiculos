@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 
 public class Moto extends Veiculo{
 	
-	boolean ignicao;
+	boolean ignicao, estadoVeiculo;
+	protected int soma, brek, veloMax;
 	protected String modelo, marca, cilindrada, tipoAbastecimento;
 	protected boolean bau;
 	
@@ -29,31 +30,36 @@ public class Moto extends Veiculo{
 	
 	@Override
 	public void ligar() {
-		boolean ligar = true;
-		if (ligar == true) {
-			System.out.println("A moto está ligada");
+		ignicao =true;
+		if (ignicao == true) {
+			JOptionPane.showMessageDialog(null,"Moto ligada.");
+			veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de sua moto ?"));
 		} else {
-			System.out.println("A moto já está ligada");
+			JOptionPane.showMessageDialog(null,"A moto está ligado.");	
 		}
 		
 	}
 
 	@Override
 	public void desligar() {
-		boolean desligar = true;
-		if (desligar == true) {
-			System.out.println("O caminhão desligou.");
+		if (estadoVeiculo == true && soma > 0 && soma < veloMax) {
+			JOptionPane.showMessageDialog(null, "A moto não pode ser desligada em movimento");
 		} else {
-			System.out.println("O caminhão já está desligado.");
+			estadoVeiculo = false;
+			ignicao = false;
+			JOptionPane.showMessageDialog(null, "Moto desligada.");
 		}
 		
 	}
+		
+	
 
 	@Override
 	public void acelerar() {
 		if (ignicao == true) {
-			int soma = 0, acelerar = 0;
-			int veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Carro ?"));
+			estadoVeiculo = true;
+			int acelerar = 0;
+			
 			
 			while (soma < veloMax) {
 				acelerar = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja acelerar ?"));
@@ -62,10 +68,10 @@ public class Moto extends Veiculo{
 				
 				if (soma > veloMax) {
 					JOptionPane.showMessageDialog(null, "Você não pode acelerar " + acelerar
-							+ " kms pois ira ultrapassar a velocidade maxima de seu carro " + veloMax);
+							+ " kms pois ira ultrapassar a velocidade maxima de sua moto " + veloMax);
 					break;
 				}
-				JOptionPane.showMessageDialog(null, "Seu carro acelerou " + acelerar + " a velocidade é de " + soma);
+				JOptionPane.showMessageDialog(null, "Sua moto acelerou " + acelerar + " a velocidade é de " + soma);
 				
 				String continua = JOptionPane.showInputDialog(null, "Deseja continuar acelerando ? \n" + "(s/n)");
 				
@@ -77,14 +83,38 @@ public class Moto extends Veiculo{
 				
 			}
 		}else {
-			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
+			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois a moto esta desligada");
 		}
 	
 	}
 
 	@Override
-	public void freiar() {
-		// TODO Auto-generated method stub
+	public void frear() {
+		if (estadoVeiculo == true && ignicao == true) {
+			while (soma > 0 && soma < veloMax) {
+				JOptionPane.showMessageDialog(null, "A moto esta a " + soma + " km ");
+
+				brek = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja frear"));
+
+				soma -= brek;
+				
+				if (soma <= 0) {
+					JOptionPane.showMessageDialog(null, "A moto parou");
+					estadoVeiculo = false;
+					break;
+				}
+
+				String continua = JOptionPane.showInputDialog(null,
+						"A moto esta a " + soma + " kmh" + "\nDeseja continuar freiando ? \n" + "(s/n)");
+
+				 if (continua.equals("s")) {
+
+				} else if (continua.equals("n")) {
+					break;
+				}
+			}
+		}
+
 		
 	}
 	

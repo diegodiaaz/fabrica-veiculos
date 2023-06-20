@@ -4,15 +4,17 @@ import javax.swing.JOptionPane;
 
 public class Caminhao extends Veiculo{
 
-	boolean ignicao;
+	protected boolean ignicao, estadoVeiculo;
 	protected boolean carga;
 	protected String pesoCarga, tamanhoCarga, marca, modelo, tipoAbastecimento;
+	protected int soma, brek, veloMax;
 	
 	public Caminhao(String anoFabricacao, String cor, String placa, String numeroRodas, String pesoCarga, String tamanhoCarga, String marca, String modelo, String tipoAbastecimento, boolean carga) {
 		super(anoFabricacao, cor, placa, numeroRodas);
-		// TODO Auto-generated constructor stub
+	
 	}
 	
+	//composição de objetos
 	public void statusCaminhao() {
 		System.out.println("Marca - " + this.marca);
 		System.out.println("Modelo - " + this.modelo);
@@ -32,6 +34,7 @@ public class Caminhao extends Veiculo{
 		boolean ligar = true;
 		if (ligar == true) {
 			System.out.println("O caminhão ligou.");
+			veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Caminhão ?"));
 		} else {
 			System.out.println("O caminhão já está ligado.");
 		}
@@ -40,22 +43,24 @@ public class Caminhao extends Veiculo{
 
 	@Override
 	public void desligar() {
-
-		boolean desligar = true;
-		if (desligar == true) {
-			System.out.println("O caminhão desligou.");
+		if (estadoVeiculo == true) {
+			JOptionPane.showMessageDialog(null, "O caminhão não pode ser desligado em movimento");
 		} else {
-			System.out.println("O caminhão já está desligado.");
+			estadoVeiculo = false;
+			ignicao = false;
+			JOptionPane.showMessageDialog(null, "Caminhão desligado.");
 		}
 		
 	}
+	
 
 	@Override
 	public void acelerar() {
 		
 		if (ignicao == true) {
-			int soma = 0, acelerar = 0;
-			int veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Carro ?"));
+			int acelerar = 0;
+			estadoVeiculo = true;
+			
 			
 			while (soma < veloMax) {
 				acelerar = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja acelerar ?"));
@@ -79,14 +84,37 @@ public class Caminhao extends Veiculo{
 				
 			}
 		}else {
-			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
+			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o caminhão esta desligado");
 		}
 		
 	}
 
 	@Override
-	public void freiar() {
-		// TODO Auto-generated method stub
+	public void frear() {
+		if (estadoVeiculo == true && ignicao == true) {
+			while (soma > 0) {
+				JOptionPane.showMessageDialog(null, "O carro esta a " + soma + " km ");
+
+				brek = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja frear"));
+
+				soma -= brek;
+				
+				if (soma <= 0) {
+					JOptionPane.showMessageDialog(null, "O carro parou");
+					estadoVeiculo = false;
+					break;
+				}
+
+				String continua = JOptionPane.showInputDialog(null,
+						"O carro esta a " + soma + " kmh" + "\nDeseja continuar freiando ? \n" + "(s/n)");
+
+				 if (continua.equals("s")) {
+
+				} else if (continua.equals("n")) {
+					break;
+				}
+			}
+		}
 		
 	}
 
