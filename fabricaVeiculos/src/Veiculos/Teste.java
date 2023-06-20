@@ -1,3 +1,4 @@
+
 //Se sobrar tempo: criar um método abstrado de trocar marcha e verificar se o veículo troca marcha.
 
 package Veiculos;
@@ -5,23 +6,34 @@ package Veiculos;
 public class Teste {
 
 	public static void main(String[] args) {
-		
 
+//		Moto motinha = new Moto("2022", "Preta", "SKK-0912", "2", "Ninja", "Kawasaki", "600", "Flex", true);
+//		motinha.ligar();
+//		motinha.acelerar();
+//		motinha.frear();
+//		motinha.abrirBau();
+//		motinha.desligar();
+//		motinha.statusMoto();
 		
-		
-
-		Moto motinha = new Moto("2022", "Preta", "SKK-0912", "2", "Ninja", "Kawasaki", "600", "Combustível", false);
-		motinha.ligar();
-		motinha.acelerar();
-		motinha.frear();
-		motinha.desligar();
-		// motinha.statusMoto();
-		
-		// Caminhao caminhaozinho = new Caminhao("2023", "Branco", "DKM-0211", "6", "18kg", "1m", "Mercedes Benz", "sla", "Elétrico", true);
-		 //caminhaozinho.statusCaminhao();
+//		Carro carro = new Carro("2023", "Prata", "DDD-1012", "4", "700", "BMW", "BMW 320i", "Flex");
+//		carro.ligar();
+//		carro.acelerar();
+//		carro.abrirPorta();
+//		carro.frear();
+//		carro.desligar();
+//		carro.statusCarro();
+	
+		Caminhao caminhao = new Caminhao("2021", "Azul", "CSW-0999", "6", true, "15Kg", "10m", "Volvo", "Volvo VM", "Diesel");
+//		caminhao.ligar();
+//		caminhao.acelerar();
+//		caminhao.abrirPorta();
+//		caminhao.frear();
+//		caminhao.desligar();
+		caminhao.statusCaminhao();
+	
 	}
+	
 
 }
 
-// 	public Caminhao(String anoFabricacao, String cor, String placa, String numeroRodas, String pesoCarga, String tamanhoCarga, String marca, String modelo, String tipoAbastecimento, boolean carga) {
-//super(anoFabricacao, cor, placa, numeroRodas);
+
