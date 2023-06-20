@@ -21,11 +21,9 @@ public class Moto extends Veiculo{
 	}
 	
 	public void statusMoto() {
-		System.out.println("Marca: " + this.marca);
-		System.out.println("Modelo: " + this.modelo);
-		System.out.println("Cor: " + this.cor);
-		System.out.println("Tipo de abastecimento: " + this.tipoAbastecimento);
-		System.out.println("Baú: " + this.bau);
+		JOptionPane.showMessageDialog(null,"Marca: " + this.marca + "\nModelo: " + this.modelo + "\nCor: " + this.cor
+				+ "\nAno de fabricação: " + this.anoFabricacao + "\nTipo abastecimento: " + this.tipoAbastecimento 
+				+ "\nPlaca: " + this.placa + "\nQuantidade de rodas: " + this.numeroRodas );
 	}
 	
 	public void abrirBau() {

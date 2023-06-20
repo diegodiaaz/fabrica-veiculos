@@ -8,7 +8,8 @@ public class Carro extends Veiculo {
 	protected int soma, brek, veloMax;
 	protected String modelo, marca, cavalos, tipoAbastecimento;
 	
-	public Carro(String anoFabricacao, String cor, String placa, String numeroRodas,  String modelo, String marca, String cavalos,String tipoAbastecimento) {
+	public Carro(String anoFabricacao, String cor, String placa, String numeroRodas,  String modelo, String marca, String cavalos,
+			String tipoAbastecimento) {
 		super(anoFabricacao, cor, placa, numeroRodas);
 		
 		this.modelo = modelo;
@@ -18,11 +19,10 @@ public class Carro extends Veiculo {
 	}
 
 	public void statusCarro() {
-		System.out.println("Marca: " + this.marca);
-		System.out.println("Modelo: " + this.modelo);
-		System.out.println("Cor: " + this.cor);
-		System.out.println("Tipo de abastecimento: " + this.tipoAbastecimento);
-		System.out.println("Ano Fabricação: " + this.anoFabricacao);
+		
+		JOptionPane.showMessageDialog(null,"Marca: " + this.marca + "\nModelo: " + this.modelo + "\nCor: " + this.cor
+				+ "\nAno de fabricação: " + this.anoFabricacao + "\nTipo abastecimento: " + this.tipoAbastecimento 
+				+ "\nPlaca: " + this.placa + "\nQuantidade de rodas: " + this.numeroRodas);
 	}
 	
 	public void abrirPortaMala() {
