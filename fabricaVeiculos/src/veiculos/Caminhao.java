@@ -1,4 +1,4 @@
-package Veiculos;
+package veiculos;
 
 import javax.swing.JOptionPane;
 
