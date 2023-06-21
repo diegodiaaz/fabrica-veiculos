@@ -47,7 +47,7 @@ public class Carro extends Veiculo {
 		ignicao = true;
 		if (ignicao == true) {
 			JOptionPane.showMessageDialog(null, "Carro ligado.");
-			veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu Carro ?"));
+			veloMax = Integer.parseInt(JOptionPane.showInputDialog(null, "Qual a velocidade maxima de seu carro?"));
 		} else {
 			JOptionPane.showMessageDialog(null, "O carro já está ligado.");
 		}
@@ -62,18 +62,18 @@ public class Carro extends Veiculo {
 			int acelerar = 0;
 
 			while (soma < veloMax) {
-				acelerar = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja acelerar ?"));
+				acelerar = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja acelerar?"));
 
 				soma += acelerar;
 
 				if (soma > veloMax) {
 					JOptionPane.showMessageDialog(null, "Você não pode acelerar " + acelerar
-							+ " kms pois ira ultrapassar a velocidade maxima de seu carro " + veloMax);
+							+ " km/h pois ira ultrapassar a velocidade maxima de seu carro, que é " + veloMax + " km/h.");
 					break;
 				}
-				JOptionPane.showMessageDialog(null, "Seu carro acelerou " + acelerar + " a velocidade é de " + soma);
+				JOptionPane.showMessageDialog(null, "Seu carro acelerou " + acelerar + "km/h. A velocidade atual é de " + soma + " km/h.");
 
-				String continua = JOptionPane.showInputDialog(null, "Deseja continuar acelerando ? \n" + "(s/n)");
+				String continua = JOptionPane.showInputDialog(null, "Deseja continuar acelerando? \n" + "(s/n)");
 
 				if (continua.equals("s")) {
 
@@ -83,7 +83,7 @@ public class Carro extends Veiculo {
 
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado");
+			JOptionPane.showMessageDialog(null, "Não é possível acelerar pois o carro esta desligado.");
 		}
 
 	}
@@ -93,20 +93,20 @@ public class Carro extends Veiculo {
 	public void frear() {
 		if (movimentoVeiculo == true && ignicao == true) {
 			while (soma > 0) {
-				JOptionPane.showMessageDialog(null, "O carro esta a " + soma + " km ");
+				JOptionPane.showMessageDialog(null, "O carro esta a " + soma + " km/h.");
 
-				brek = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja frear"));
+				brek = Integer.parseInt(JOptionPane.showInputDialog(null, "Quanto você deseja frear?"));
 
 				soma -= brek;
 
 				if (soma <= 0) {
-					JOptionPane.showMessageDialog(null, "O carro parou");
+					JOptionPane.showMessageDialog(null, "O carro parou.");
 					estadoVeiculo = false;
 					break;
 				}
 
 				String continua = JOptionPane.showInputDialog(null, 
-						"O carro esta a " + soma + " kmh" + "\nDeseja continuar freiando ? ");
+						"O carro esta a " + soma + " km/h." + "\nDeseja continuar freiando ? ");
 
 				if (continua.equals("s")) {
 
@@ -124,7 +124,7 @@ public class Carro extends Veiculo {
 	@Override
 	public void desligar() {
 		if (movimentoVeiculo == true) {
-			JOptionPane.showMessageDialog(null, "O carro não pode ser desligado em movimento");
+			JOptionPane.showMessageDialog(null, "O carro não pode ser desligado em movimento.");
 		} else {
 			movimentoVeiculo = false;
 			ignicao = false;
